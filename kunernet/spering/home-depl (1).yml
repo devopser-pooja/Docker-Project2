@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spering
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spering
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: spering
+    spec:
+      containers:
+      - name: spering
+        image: rajatpzade/myhome:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: http
+          protocol: TCP
+          containerPort: 80
