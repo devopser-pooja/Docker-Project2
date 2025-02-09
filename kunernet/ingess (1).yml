@@ -10,17 +10,11 @@ spec:
   - host: demo.com
     http:
       paths:
-      - path: /home
+      - path: /spering
         pathType: Prefix
         backend:
           service:
             name: spering-service
             port:
               number: 80
-      - path: /mobile
-        pathType: Prefix
-        backend:
-          service:
-            name: mobileapp-service
-            port:
-              number: 80
+      
