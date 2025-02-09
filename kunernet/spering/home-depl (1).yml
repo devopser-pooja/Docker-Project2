@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: spering
-        image: rajatpzade/myhome:latest
+        image: rajatpzade/spering:latest
         resources:
           limits:
             memory: "128Mi"
